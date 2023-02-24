@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pmdm2eva.R;
-
+/*
 public class MainActivity_6_1 extends AppCompatActivity {
     private RadioButton rbAgobiado;
     private RadioButton rbTriste;
