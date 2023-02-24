@@ -21,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
         
         radioGroup= findViewById(R.id.radioGroup);
         radioButton=findViewById(R.id.rbAgobiado);
+
         int idButtons = radioGroup.getCheckedRadioButtonId();
-        if (radioButton.isChecked()){
-            radioButton.setChecked(idButtons);
+        if (idButtons != 0){
+            radioButton.setChecked(true);
         }
     }
 
