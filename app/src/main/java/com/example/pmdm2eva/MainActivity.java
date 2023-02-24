@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+/* EJ 6.2 CONSEJOS DEL DIA con Toast
+*
+* */
+
+
 /* EJ 6.1 Radiogroup que recuerda la opcion al cerrar al activity y volver a abrirse
 *
 * NO FUNCIONA, POR MIRAR BIEN
