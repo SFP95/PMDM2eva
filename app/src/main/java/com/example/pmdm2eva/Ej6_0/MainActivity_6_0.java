@@ -9,8 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pmdm2eva.R;
-
-public class MainActivity extends AppCompatActivity {
+/*
+public class MainActivity_6_0 extends AppCompatActivity {
     private EditText edt;
     private Button b;
 
