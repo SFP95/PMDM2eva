@@ -1,35 +1,17 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej7_4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+import com.example.pmdm2eva.R;
+/*
+public class MainActivity_7_4 extends AppCompatActivity implements SensorEventListener {
 
     SensorManager _sm;
     Sensor _acelerometro;
@@ -86,59 +68,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 /* EJ 7.4 mustras valores de : x,y, x + valor de precisión
 *
 *
-public class MainActivity_7_4 extends AppCompatActivity implements SensorEventListener {
-
-    SensorManager _sm;
-    Sensor _acelerometro;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        inicializar();
-        }
-
-    private void inicializar() {
-        _sm = (SensorManager) getSystemService(SENSOR_SERVICE);
-        _acelerometro = _sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        _sm.unregisterListener(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        _sm.registerListener(this,_acelerometro,SensorManager.SENSOR_DELAY_NORMAL);
-
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        float x = event.values[0];
-        float y = event.values[1];
-        float z = event.values[2];
-        int precision = event.accuracy;
-
-        TextView tvX = findViewById(R.id.tvX);
-        TextView tvY = findViewById(R.id.tvY);
-        TextView tvZ = findViewById(R.id.tvZ);
-        TextView tvPrecision = findViewById(R.id.tvPrecision);
-
-        tvX.setText(String.format("%.2f",x));
-        tvY.setText(String.format("%.2f",y));
-        tvZ.setText(String.format("%.2f",z));
-        tvPrecision.setText(""+precision);
-
-
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) { }
-}
 *
 * *///7.4
 
