@@ -1,24 +1,40 @@
-package com.example.pmdm2eva.Ej7_3;
-
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import android.os.Bundle;
-import android.widget.TextView;
+package com.example.pmdm2eva;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pmdm2eva.R;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.List;
-
-public class MainActivity_7_3 extends AppCompatActivity {
+import java.util.Scanner;
+/*
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mostrarSensores();
-        }
+    }
 
     private void mostrarSensores() {
         SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
