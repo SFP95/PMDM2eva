@@ -1,13 +1,16 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej7_5;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pmdm2eva.R;
+
+public class MainActivity_7_5 extends AppCompatActivity {
 
     class MiDibujo extends View{
 
