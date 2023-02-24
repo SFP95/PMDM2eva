@@ -1,39 +1,26 @@
-package com.example.pmdm2eva;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pmdm2eva.Ej6_3;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pmdm2eva.R;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+/*
+public class MainActivity_6_3 extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-    }
-}
-
-/*EJ 6.3 Libro de firmas
- *
-*private final String NOMBRE_FICHERO = "visitas.txt";
+    private final String NOMBRE_FICHERO = "visitas.txt";
     private ArrayList<String> _listaVisitantes;
 
     @Override
@@ -88,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             FileOutputStream fos;
             fos = openFileOutput(NOMBRE_FICHERO, Context.MODE_PRIVATE | Context.MODE_APPEND);
-            java.io.OutputStreamWriter out;
+            OutputStreamWriter out;
             out = new OutputStreamWriter(fos);
             for (String nombre: _listaVisitantes){
                 out.write(nombre+"\n");
@@ -98,8 +85,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+}
+
+/*EJ 6.3 Libro de firmas
+ *
 *
-* *///6.3
+* */
 
 /* EJ 6.2 CONSEJOS DEL DIA con Toast
 *
@@ -132,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 *
-* *///6.2
+* */
+
 
 /* EJ 6.1 Radiogroup que recuerda la opcion al cerrar al activity y volver a abrirse
 *
@@ -185,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 *
-* *///6.1 POR RESOLVER
+* */
 
 /*EJ 6.0 recoger texto de Edit text a un toast que se miestar al pulsar un botón
 *
@@ -209,4 +201,4 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 *
-* *///6.0
+* */
