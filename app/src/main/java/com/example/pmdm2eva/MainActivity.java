@@ -2,29 +2,97 @@ package com.example.pmdm2eva;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String NOMBRE_FICHERO = "visitas.txt";
+    private ArrayList<String> _listaVisitantes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        inicializarListaVisitantes();
+        leerFichero();
+        actualizarTvVisitantes();
+
     }
 
+    private void leerFichero() {
+        try {
+            FileInputStream fich;
+            fich = openFileInput(NOMBRE_FICHERO);
+            Scanner scan = new Scanner(fich);
+            while (scan.hasNextLine()){
+                _listaVisitantes.add(scan.nextLine());
+            }
+            scan.close();
+        }catch (IOException e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    private void inicializarListaVisitantes() {
+        this._listaVisitantes = new ArrayList<>();
+    }
+
+    private void actualizarTvVisitantes() {
+        String texto="";
+        for (String nombre: _listaVisitantes){
+            texto += (nombre+"\n");
+        }
+        TextView tv=findViewById(R.id.tcListavisitantes);
+        tv.setText(texto);
+    }
+    private void actualizarListaVisitantes() {
+        EditText et = findViewById(R.id.edNombre);
+        _listaVisitantes.add(et.getText().toString());
+    }
+
+        public void onRegistrar(View view) {
+        actualizarListaVisitantes();
+        escribirFichero();
+        actualizarTvVisitantes();
+    }
+
+    private void escribirFichero() {
+        try {
+            FileOutputStream fos;
+            fos = openFileOutput(NOMBRE_FICHERO, Context.MODE_PRIVATE | Context.MODE_APPEND);
+            java.io.OutputStreamWriter out;
+            out = new OutputStreamWriter(fos);
+            for (String nombre: _listaVisitantes){
+                out.write(nombre+"\n");
+                out.close();
+            }
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 }
+
+/*EJ 6.3 Libro de firmas
+ *
+*
+* */
 
 /* EJ 6.2 CONSEJOS DEL DIA con Toast
 *
