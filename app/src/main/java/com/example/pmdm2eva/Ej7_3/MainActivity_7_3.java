@@ -11,7 +11,7 @@ import com.example.pmdm2eva.R;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_7_3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
