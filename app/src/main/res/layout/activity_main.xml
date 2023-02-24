@@ -6,28 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/EdTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Escribe algo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bToast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="259dp"
-        android:onClick="onToast"
-        android:text="Button"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="306dp"
+        android:layout_height="291dp"
+        android:onClick="onComprobar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EdTexto"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbTriste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Triste" />
+
+        <RadioButton
+            android:id="@+id/rbContento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contento" />
+
+        <RadioButton
+            android:id="@+id/rbAgobiado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agobiado" />
+
+        <RadioButton
+            android:id="@+id/rbEuforico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Euforico" />
+
+        <RadioButton
+            android:id="@+id/rbCabreado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cabreado" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
