@@ -11,7 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private RadioButton radioButton;
+    private RadioButton rbAgobiado;
+    private RadioButton rbTriste;
+    private RadioButton rbContento;
+    private RadioButton rbEuforico;
+    private RadioButton rbCabreado;
+
     private RadioGroup radioGroup;
 
     @Override
@@ -20,14 +25,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         radioGroup= findViewById(R.id.radioGroup);
-        radioButton=findViewById(R.id.rbAgobiado);
 
-        int idButtons = radioGroup.getCheckedRadioButtonId();
-        if (idButtons != 0){
-            radioButton.setChecked(true);
+        rbTriste= findViewById(R.id.rbTriste);
+        rbEuforico= findViewById(R.id.rbEuforico);
+        rbAgobiado= findViewById(R.id.rbAgobiado);
+        rbCabreado= findViewById(R.id.rbCabreado);
+        rbContento= findViewById(R.id.rbContento);
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+            case 1: rbTriste.setChecked(true);
+            case 2: rbContento.setChecked(true);
+            case 3: rbAgobiado.setChecked(true);
+            case 4: rbEuforico.setChecked(true);
+            case 5: rbCabreado.setChecked(true);
+
         }
     }
 
+    public void onComprobar(View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.rbTriste:
+                if (checked)
+                    break;
+            case R.id.rbContento:
+                if (checked)
+                    break;
+        }
+
+    }
 }
 
 /* EJ 6.1 Radiogroup que recuerda la opcion al cerrar al activity y volver a abrirse
