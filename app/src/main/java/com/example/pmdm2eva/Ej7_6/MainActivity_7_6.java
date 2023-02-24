@@ -1,6 +1,4 @@
-package com.example.pmdm2eva;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pmdm2eva.Ej7_6;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,9 +8,9 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_7_6 extends AppCompatActivity {
 
     class EjemploMultiTouch extends View {
 
