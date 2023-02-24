@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="306dp"
+        android:layout_height="291dp"
+        android:onClick="onComprobar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbTriste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Triste" />
+
+        <RadioButton
+            android:id="@+id/rbContento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contento" />
+
+        <RadioButton
+            android:id="@+id/rbAgobiado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agobiado" />
+
+        <RadioButton
+            android:id="@+id/rbEuforico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Euforico" />
+
+        <RadioButton
+            android:id="@+id/rbCabreado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cabreado" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
