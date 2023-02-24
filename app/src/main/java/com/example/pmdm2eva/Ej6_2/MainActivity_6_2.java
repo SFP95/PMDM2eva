@@ -1,29 +1,42 @@
-package com.example.pmdm2eva;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pmdm2eva.Ej6_2;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pmdm2eva.R;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+/*
+public class MainActivity_6_2 extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
+    private ArrayList<String> _consejos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cargarConsejos();
     }
 
+    private void cargarConsejos() {
+        _consejos = new ArrayList<>();
+        InputStream is= getResources().openRawResource(R.raw.consejos);
+        Scanner scan = new Scanner(is);
+        while (scan.hasNextLine()){
+            _consejos.add(scan.nextLine());
+        }
+    }
 
+    public void onAconsejar(View v) {
+        String consejo="";
+        int index= (int) (Math.random()*_consejos.size());
+        Toast.makeText(this,_consejos.get(index),Toast.LENGTH_SHORT).show();
+    }
 }
 
 /* EJ 6.2 CONSEJOS DEL DIA con Toast
