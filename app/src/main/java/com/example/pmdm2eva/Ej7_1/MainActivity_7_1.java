@@ -1,15 +1,6 @@
-package com.example.pmdm2eva.EJ7_1;
-
-import android.os.Build;
-import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.view.View;
-import android.widget.EditText;
+package com.example.pmdm2eva.Ej7_1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.pmdm2eva.R;
 
 public class MainActivity_7_1 extends AppCompatActivity {
 /*
