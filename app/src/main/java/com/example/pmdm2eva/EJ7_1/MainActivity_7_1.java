@@ -1,32 +1,21 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.EJ7_1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.pmdm2eva.R;
 
-
+public class MainActivity_7_1 extends AppCompatActivity {
+/*
+    private Vibrator _v;
+    EditText etTiempo;
+    EditText etIntensidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +23,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         }
 
+    public void onProbar(View view) {
+        long tiempo;
+        int intensidad;
+        etTiempo = findViewById(R.id.etTiempo);
+        etIntensidad =  findViewById(R.id.etIntensidad);
+
+        tiempo = Long.parseLong(etTiempo.getText().toString());
+        intensidad = Integer.parseInt(etIntensidad.getText().toString());
+        _v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            _v.vibrate(VibrationEffect.createOneShot(tiempo*1000,intensidad));
+        }else{
+            _v.vibrate(tiempo);
+        }
+    }
+
+    public void onParar(View view) {
+        _v.cancel();
+    }
 }
-
-/* EJ 7.2 patron con ritmo
-
-* *///7.2
-
 /* EJ 7.1 Sensores vibracion con tiempo he intensidad
 
 public class MainActivity extends AppCompatActivity {
