@@ -21,14 +21,18 @@ public class MainActivity extends AppCompatActivity {
         
         radioGroup= findViewById(R.id.radioGroup);
         radioButton=findViewById(R.id.rbAgobiado);
-        radioButton.setChecked(true);
-        radioGroup.getCheckedRadioButtonId();
+        int idButtons = radioGroup.getCheckedRadioButtonId();
+        if (radioButton.isChecked()){
+            radioButton.setChecked(idButtons);
+        }
     }
 
-    public void onComprobar(View view) {    }
 }
 
-/* EJ 6.1 Radio grup que recuerda la opcion al cerrar al activity y volver a abrirse
+/* EJ 6.1 Radiogroup que recuerda la opcion al cerrar al activity y volver a abrirse
+*
+*
+*
 * */
 
 /*EJ 6.0 recoger texto de Edit text a un toast que se miestar al pulsar un botón
