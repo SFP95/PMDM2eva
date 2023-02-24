@@ -1,9 +1,9 @@
 package com.example.pmdm2eva.Ej7_1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity_7_1 extends AppCompatActivity {
 /*
+public class MainActivity_7_1 extends AppCompatActivity {
+
     private Vibrator _v;
     EditText etTiempo;
     EditText etIntensidad;
