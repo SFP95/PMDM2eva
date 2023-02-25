@@ -1,4 +1,4 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej10_2;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,7 +12,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.pmdm2eva.R;
+
+public class MainActivity_10_2 extends AppCompatActivity {
     private final long NUM_PRIMOS = 100000000;
 
     private CalculaPrimos _cp;
