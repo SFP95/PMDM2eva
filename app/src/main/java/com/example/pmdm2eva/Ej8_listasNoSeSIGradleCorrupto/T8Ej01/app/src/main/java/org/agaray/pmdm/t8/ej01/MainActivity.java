@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         /*
         libros.remove(aa.getItem(position));
         aa.notifyDataSetChanged();
-         */
+         *//*
         aa.remove(aa.getItem(position));
 
         Toast.makeText(this, "Se ha borrado el elemento (" + position + "," + id + ")", Toast.LENGTH_SHORT).show();

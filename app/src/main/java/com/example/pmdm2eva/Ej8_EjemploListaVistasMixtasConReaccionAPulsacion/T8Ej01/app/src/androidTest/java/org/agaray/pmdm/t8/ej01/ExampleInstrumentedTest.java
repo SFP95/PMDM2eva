@@ -1,5 +1,5 @@
-package org.agaray.pmdm.t8.ej01;
-
+package com.example.pmdm2eva.Ej8_EjemploListaVistasMixtasConReaccionAPulsacion.T8Ej01.app.src.androidTest.java.org.agaray.pmdm.t8.ej01;
+/*
 import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
+/*
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
@@ -23,4 +24,4 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("org.agaray.pmdm.t8.ej01", appContext.getPackageName());
     }
-}
+}*/

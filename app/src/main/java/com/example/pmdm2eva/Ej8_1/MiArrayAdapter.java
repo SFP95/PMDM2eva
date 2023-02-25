@@ -1,5 +1,5 @@
 package com.example.pmdm2eva.Ej8_1;
-
+/*
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -81,3 +81,4 @@ public class MiArrayAdapter extends ArrayAdapter<Libro> {
         return getItem(position).getTitulo().hashCode();
     }
 }
+*/

@@ -1,5 +1,5 @@
-package org.agaray.pmdm.t8.ej01;
-
+package com.example.pmdm2eva.Ej8_EjemploListaVistasMixtasConReaccionAPulsacion.T8Ej01.app.src.main.java.org.agaray.pmdm.t8.ej01;
+/*
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -73,4 +73,4 @@ public class MiArrayAdapter extends ArrayAdapter<Libro> {
         return v;
     }
 
-}
+}*/

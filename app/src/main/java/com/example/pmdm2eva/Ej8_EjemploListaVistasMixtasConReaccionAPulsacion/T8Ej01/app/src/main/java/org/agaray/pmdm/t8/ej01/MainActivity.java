@@ -1,5 +1,5 @@
-package org.agaray.pmdm.t8.ej01;
-
+package com.example.pmdm2eva.Ej8_EjemploListaVistasMixtasConReaccionAPulsacion.T8Ej01.app.src.main.java.org.agaray.pmdm.t8.ej01;
+/*
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -48,4 +48,4 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Han pulsado en el elemento "+position, Toast.LENGTH_SHORT).show();
     }
 
-}
+}*/
