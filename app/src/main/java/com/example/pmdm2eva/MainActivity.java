@@ -1,85 +1,65 @@
 package com.example.pmdm2eva;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Libro> libros;
-    private MiArrayAdapter aa;
+
+    private final long NUM_PRIMOS=10000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        libros = new ArrayList<>();
 
-        libros.add(new Libro("Zalacaín el aventurero", "Pío Baroja"));
-        libros.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes"));
-        libros.add(new Libro("La Celestina", "Fernando de Rojas"));
-        libros.add(new Libro("Rinconete y Cortadillo", "Miguel de Cervantes"));
-        libros.add(new Libro("El Lazarillo de Tormes", null));
-        libros.add(new Libro("La Galatea", "Miguel de Cervantes"));
-        libros.add(new Libro("La Biblia", null));
-        libros.add(new Libro("Cantar del Mio Cid", null));
-
-        aa = new MiArrayAdapter(this,libros);
-
-        ListView lv = (ListView) findViewById(R.id.listview);
-        lv.setOnItemClickListener((parent, view, position, id) -> onPulsacionBreve(position, id));
-        lv.setOnItemLongClickListener((parent, view, position, id) -> onPulsacionLarga(position, id));
-        lv.setEmptyView(findViewById(R.id.emptyListView));
-        lv.setAdapter(aa);
-    }
-    private void onPulsacionBreve(int position, long id) {
-        Toast.makeText(this, "Han pulsado en el elemento (" + position + "," + id + ")", Toast.LENGTH_SHORT).show();
     }
 
-    private boolean onPulsacionLarga(int position, long id) {
-        aa.remove(aa.getItem(position));
-
-        Toast.makeText(this, "Se ha borrado el elemento (" + position + "," + id + ")", Toast.LENGTH_SHORT).show();
-        return true;
+    public void onMensaje(View view) {
+        Toast.makeText(this, "MENSAJE ======>", Toast.LENGTH_SHORT).show();
     }
 
-    public void onOrdenarPorTitulo(View view) {
-        aa.sort((li, ld) -> compararPorTitulo(li, ld));
+    public void onLanzar(View view) {
+        Thread t = new Thread(() -> calcularPrimos(1,NUM_PRIMOS));
+        t.start();
+        Thread t1 = new Thread(() -> calcularPrimos(2,NUM_PRIMOS*10));
+        t1.start();
+        Thread t2 = new Thread(() -> calcularPrimos(3,NUM_PRIMOS/10));
+        t2.start();
     }
 
-    public void onOrdenarPorAutor(View view) {
-        aa.sort((li, ld) -> compararPorAutor(li, ld));
+    private void calcularPrimos(int id, long  i) {
+        Log.i("PMDM","Comienza el cálculo "+id);
+        long resultado = cuantosPrimos(i);
+        Log.i("PMDM","("+id+") Número de primos: "+resultado);
+        runOnUiThread(()->mostrarResultado(id,resultado));
     }
 
-    private int compararPorTitulo(Libro li, Libro ld) {
-        return li.getTitulo().compareToIgnoreCase(ld.getTitulo());
+    private void mostrarResultado(int id, long resultado) {
+        TextView tv = findViewById(R.id.tvMensaje);
+        tv.setText("RES("+id+"): "+ resultado);
     }
 
-    public int compararPorAutor(Libro li, Libro ld) {
-        int resultAutor = -1;
+    private long cuantosPrimos(long limite) {
+        long result = 0;
+        for (long i = 1; i <= limite; ++i)
+            if (esPrimo(i))
+                ++result;
+        return result;
+    }
 
-        if ( li.getAutor() == null && ld.getAutor() == null) {
-            resultAutor =  li.getTitulo().compareTo(ld.getTitulo());
-        }
-
-        if (li.getAutor() == null && ld.getAutor() != null) {
-            resultAutor =  -1;
-        }
-
-        if (li.getAutor() != null && ld.getAutor() == null) {
-            resultAutor =  1;
-        }
-
-        if (li.getAutor() != null && ld.getAutor() != null) {
-            if (li.getAutor().compareToIgnoreCase(ld.getAutor()) == 0) {
-                resultAutor = li.getTitulo().compareTo(ld.getTitulo());
-            } else {
-                resultAutor = li.getAutor().compareTo(ld.getAutor());
-            }
-        }
-        return resultAutor;
+    private boolean esPrimo(long i) {
+        if (i == 1) return false;
+        if (i < 4) return true;
+        if ((i % 2) == 0 || (i % 3) == 0) return false;
+        if (i < 9) return true;
+        long n = 5;
+        while (n*n <= i && i % n != 0 && i % (n + 2) != 0)
+            n += 6;
+        return (n*n > i);
     }
 }

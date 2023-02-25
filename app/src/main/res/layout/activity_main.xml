@@ -6,55 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2" />
-
-    <ViewStub
-        android:id="@+id/emptyListView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        android:visibility="gone"
-        android:layout="@layout/lista_vacia_layout"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
+    <Button
+        android:id="@+id/bLanzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLanzar"
+        android:text="Lanzar"
+        app:layout_constraintEnd_toStartOf="@+id/bMensaje"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7989056" />
+        app:layout_constraintGuide_begin="69dp" />
 
     <Button
-        android:id="@+id/bAutor"
+        android:id="@+id/bMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onOrdenarPorAutor"
-        android:text="Autor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onMensaje"
+        android:text="Mensaje"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bTitulo"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <Button
-        android:id="@+id/bTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onOrdenarPorTitulo"
-        android:text="Título"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bAutor"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintStart_toEndOf="@+id/bLanzar"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
