@@ -1,5 +1,5 @@
 package com.example.pmdm2eva.Ej7_6;
-
+/*
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;

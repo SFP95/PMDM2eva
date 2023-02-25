@@ -1,5 +1,5 @@
 package com.example.pmdm2eva.Ej7_5;
-
+/*
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -47,4 +47,4 @@ public class MainActivity_7_5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(new MiDibujo(this));
     }
-}
+}*/
