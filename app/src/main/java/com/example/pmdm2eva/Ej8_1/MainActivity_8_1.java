@@ -1,4 +1,4 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej8_1;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,9 +6,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pmdm2eva.R;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_8_1 extends AppCompatActivity {
     private ArrayList<Libro> libros;
     private MiArrayAdapter aa;
 
