@@ -7,70 +7,113 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvMensaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CALCULADORA de PRIMOS"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:id="@+id/tvListaPartido"
+        android:layout_width="328dp"
+        android:layout_height="59dp"
+        android:text="Lista de partidos"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/bLanzarCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onLanzarCancelar"
-        android:text="Lanzar"
-        app:layout_constraintEnd_toStartOf="@+id/bMensaje"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="69dp" />
+        app:layout_constraintGuide_begin="115dp" />
 
-    <Button
-        android:id="@+id/bMensaje"
+    <TextView
+        android:id="@+id/tvVisitante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onMensaje"
-        android:text="Mensaje"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Visitante"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bLanzarCancelar"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toEndOf="@+id/tvres2"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <EditText
-        android:id="@+id/etNumCeros"
+    <TextView
+        android:id="@+id/tvres1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="8"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbProgreso" />
+        android:layout_marginEnd="36dp"
+        android:hint="Res1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <ProgressBar
-        android:id="@+id/pbProgreso"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="262dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tvLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Local"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/tvres1"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bLanzarCancelar"
-        android:max="100"
-        android:visibility="invisible"
-        />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/tvres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:hint="Res2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="568dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="202dp" />
+
+    <LinearLayout
+        android:id="@+id/local"
+        android:layout_width="199dp"
+        android:layout_height="451dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginBottom="162dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visitante"
+        android:layout_width="203dp"
+        android:layout_height="450dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="118dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
