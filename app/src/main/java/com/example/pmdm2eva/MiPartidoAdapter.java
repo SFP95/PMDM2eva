@@ -46,9 +46,9 @@ public class MiPartidoAdapter extends ArrayAdapter<Partido> {
         if (convertView == null){
             int elemento_basido_de_lista = 0;
             if (p.getLocal()==null){
-                elemento_basido_de_lista = R.layout.local;
+                //elemento_basido_de_lista = R.layout.local;
             }else {
-                elemento_basido_de_lista = R.layout.visitante;
+               // elemento_basido_de_lista = R.layout.visitante;
             }
             v= LayoutInflater.from(getContext()).inflate( elemento_basido_de_lista,parent,false);
             TextView tvLocal = v.findViewById(R.id.tvLocal);

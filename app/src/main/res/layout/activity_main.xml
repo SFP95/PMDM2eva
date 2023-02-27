@@ -89,31 +89,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="202dp" />
 
-    <LinearLayout
-        android:id="@+id/local"
-        android:layout_width="199dp"
-        android:layout_height="451dp"
-        android:layout_marginTop="118dp"
-        android:layout_marginBottom="162dp"
-        android:orientation="horizontal"
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="411dp"
+        android:layout_height="381dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/visitante"
-        android:layout_width="203dp"
-        android:layout_height="450dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="118dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
