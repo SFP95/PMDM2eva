@@ -1,4 +1,4 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej8_partidos;
 
 public class Partido {
     private String local;

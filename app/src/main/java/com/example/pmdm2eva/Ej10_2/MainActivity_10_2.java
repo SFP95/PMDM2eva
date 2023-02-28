@@ -1,5 +1,5 @@
 package com.example.pmdm2eva.Ej10_2;
-
+/*
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -142,4 +142,4 @@ public class MainActivity_10_2 extends AppCompatActivity {
         }
         return resultado;
     }
-}
+}*/

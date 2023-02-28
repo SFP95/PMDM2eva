@@ -1,4 +1,4 @@
-package com.example.pmdm2eva;
+package com.example.pmdm2eva.Ej8_partidos;
 
 import android.annotation.SuppressLint;
 import android.app.ListActivity;
@@ -8,13 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.annotation.ContentView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pmdm2eva.R;
 
 import java.io.InputStream;
 import java.util.ArrayList;
