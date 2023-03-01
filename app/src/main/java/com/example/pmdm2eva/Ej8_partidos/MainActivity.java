@@ -1,5 +1,5 @@
 package com.example.pmdm2eva.Ej8_partidos;
-
+/*
 import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Context;
@@ -82,4 +82,4 @@ public class MainActivity extends ListActivity {
         }
     }
 
-}
+}*/

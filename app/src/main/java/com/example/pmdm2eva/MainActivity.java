@@ -1,6 +1,7 @@
 package com.example.pmdm2eva;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,72 +18,133 @@ import androidx.annotation.ContentView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity {
 
-    List<Partido> partidos;
-
-    class ListaPartidosAdapter extends ArrayAdapter<Partido>{
-        public ListaPartidosAdapter(@NonNull Context context, @NonNull Partido[] partidos) {
-            super(context,0,partidos);
-        }
-        public ListaPartidosAdapter(@NonNull Context context, @NonNull List<Partido> partidos) {
-            super(context,0,partidos);
-        }
-
-        @SuppressLint("ViewHolder")
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            Partido p = getItem(position);
-            View v;
-            v = LayoutInflater.from(getContext()).inflate(
-                    R.layout.detalle_partido,
-                    parent,
-                    false);
-
-            TextView local = (TextView) v.findViewById(R.id.local);
-            TextView visitante = (TextView) v.findViewById(R.id.visitante);
-            TextView res1 = (TextView) v.findViewById(R.id.res1);
-            TextView res2 = (TextView) v.findViewById(R.id.res2);
-
-            local.setText(p.getLocal());
-            visitante.setText(p.getVisitante());
-            res1.setText(""+p.getRes1());
-            res2.setText(""+p.getRes2());
-
-            return v;
-        }
-    }
+    private final int Max_Y = 700;
+    private final int Max_X = 900;
+    private int _x = 0;
+    private int _y = 0;
+    private final int TIEMPO_JUEGO = 60;
+    private int _tiempo;
+    private int _puntuacion;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iniciar();
     }
 
-    private void iniciar() {
-        cargarDatos();
-        setListAdapter(new ListaPartidosAdapter(this,partidos));
+    public void onComenzar(View view) {
+        iniciarPuntuacion();
+        desactivarBotonComenzar();
+        recalculasPosicionTopo();
+        mostrarTopo();
+        comenzarCuentaAtras();
     }
 
-    private void cargarDatos(){
-        partidos = new ArrayList<>();
-        InputStream is = getResources().openRawResource(R.raw.partido);
-        Scanner scan = new Scanner(is);
-        while (scan.hasNextLine()){
-            String linea = scan.nextLine();
-            String local = linea.split(",")[0].split("-")[0];
-            String visitante = linea.split(",")[0].split("-")[1];
-            String res1 = linea.split(",")[1].split("-")[0];
-            String res2 = linea.split(",")[1].split("-")[1];
-            partidos.add(new Partido(local,visitante,res1,res2));
+    private void iniciarPuntuacion() {
+        TextView tvPuntuacion = findViewById(R.id.tvPuntuacion);
+        tvPuntuacion.setText("0");
+    }
+
+    private void desactivarBotonComenzar() {
+        Button b = findViewById(R.id.bComenzar);
+        b.setEnabled(false);
+    }
+
+    private void comenzarCuentaAtras() {
+        iniciarTemporizador();
+        Thread t = new Thread(()->cuentaAtras());
+        t.start();
+    }
+
+    private void iniciarTemporizador() {
+        _tiempo = TIEMPO_JUEGO;
+        TextView tvTiempo = findViewById(R.id.tvTiempo);
+        tvTiempo.setText(_tiempo+"");
+    }
+
+    private void cuentaAtras() {
+        while (_tiempo != 0){
+            try {
+                Thread.sleep(1000);
+                runOnUiThread(()->actualizarTiempo());
+            }catch (InterruptedException e){
+                throw  new RuntimeException(e);
+            }
         }
     }
 
+    private void actualizarTiempo() {
+        _tiempo--;
+        if (_tiempo>=0){
+            TextView tvReloj = findViewById(R.id.tvTiempo);
+            tvReloj.setText(_tiempo+"");
+        }else{
+            finalizarJuego();
+        }
+    }
+
+    private void finalizarJuego() {
+        activarBotonComenzar();
+        ocultarTopo();
+        mostrarPuntuacion();
+    }
+
+    private void activarBotonComenzar() {
+        Button bComenzar = findViewById(R.id.bComenzar);
+        bComenzar.setEnabled(true);
+    }
+
+    private void ocultarTopo() {
+        ImageButton bTopo = findViewById(R.id.bTopo);
+        bTopo.setEnabled(false);
+        bTopo.setVisibility(View.INVISIBLE);
+    }
+
+    private void mostrarPuntuacion() {
+        TextView tvPuntuacion = findViewById(R.id.tvPuntuacion);
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setMessage("FIN DE LA PARTIDA\n PUNTUACION: "+tvPuntuacion.getText().toString());
+        alert.setPositiveButton(android.R.string.ok,null);
+        alert.show();
+    }
+
+    private void mostrarTopo() {
+        ConstraintLayout l = (ConstraintLayout) findViewById(R.id.lPantalla);
+        ImageButton bTopo = (ImageButton) findViewById(R.id.bTopo);
+        ConstraintSet set = new ConstraintSet();
+
+        set.clone(l);
+        set.setMargin(bTopo.getId(),ConstraintSet.START,_x);
+        set.setMargin(bTopo.getId(),ConstraintSet.START,_y);
+        set.applyTo(l);
+
+        bTopo.setVisibility(View.VISIBLE);
+        bTopo.setEnabled(true);
+    }
+
+    private void recalculasPosicionTopo() {
+        _x = (int) ((Math.random()*Max_X)+1);
+        _y = (int) ((Math.random()*Max_Y)+1);
+    }
+
+    public void onPulsarTopo(View view) {
+        recalculasPosicionTopo();
+        mostrarTopo();
+        aumentarPuntuacion();
+    }
+
+    private void aumentarPuntuacion() {
+        TextView tvPuntuacion = findViewById(R.id.tvPuntuacion);
+        int puntuacion = Integer.parseInt(tvPuntuacion.getText().toString());
+        tvPuntuacion.setText((puntuacion+1)+"");
+    }
 }

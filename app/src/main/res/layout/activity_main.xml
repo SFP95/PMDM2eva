@@ -4,46 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/lPantalla"
+    >
 
-
-    <!--android:text="@string/Math_list" -->
-
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/bComenzar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginTop="24dp"
-        android:textSize="34sp"
-        android:text="@string/Math_list"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:onClick="onComenzar"
+        android:text="@string/start_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:ignore="UnknownId,UsingOnClickInXml" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="409dp"
-        android:layout_height="686dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        tools:ignore="VisualLintBounds" />
-    <ViewStub
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/grideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="78dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/grideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="576dp"/>
+    <TextView
+        android:id="@+id/tvTiempo"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="32dp"
+        android:text="60"
+        android:textSize="34dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toTopOf="@+id/grideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/tvPuntuacion"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="32dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="34dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toTopOf="@+id/grideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        android:visibility="gone"
-        android:layout="@layout/lista_partidos_vacia"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+        android:id="@+id/bTopo"
+        android:layout_width="72dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/topo"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grideline"
+        tools:ignore="SpeakableTextPresentClick"
+        android:onClick="onPulsarTopo"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
