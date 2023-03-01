@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/lPantalla"
+    >
+
+    <Button
+        android:id="@+id/bComenzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onComenzar"
+        android:text="@string/start_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:ignore="UnknownId,UsingOnClickInXml" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/grideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="78dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/grideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="576dp"/>
+    <TextView
+        android:id="@+id/tvTiempo"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="32dp"
+        android:text="60"
+        android:textSize="34dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toTopOf="@+id/grideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/tvPuntuacion"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="32dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="34dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toTopOf="@+id/grideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+        android:id="@+id/bTopo"
+        android:layout_width="72dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/topo"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grideline"
+        tools:ignore="SpeakableTextPresentClick"
+        android:onClick="onPulsarTopo"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
