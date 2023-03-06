@@ -1,15 +1,15 @@
-package com.example.pmdm2eva;
-
+package com.example.pmdm2eva.cronos.mycrono;
+/*
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.os.AsyncTask;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pmdm2eva.cronos.mycrono.CromometroAdapter;
+import com.example.pmdm2eva.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,4 +96,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-}
+}*/
