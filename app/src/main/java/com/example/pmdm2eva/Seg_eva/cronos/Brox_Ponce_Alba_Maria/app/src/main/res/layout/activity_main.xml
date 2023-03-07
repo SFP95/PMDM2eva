@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vista"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvCrono"
+        android:layout_width="104dp"
+        android:layout_height="52dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lvMaraton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/lvMaraton"
+        android:layout_width="340dp"
+        android:layout_height="395dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/btAnotar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btComenzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:onClick="onComenzar"
+        android:text="COMENZAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btAnotar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btParar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onParar"
+        android:text="PARAR"
+        app:layout_constraintBottom_toBottomOf="@+id/btAnotar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btAnotar" />
+
+    <Button
+        android:id="@+id/btAnotar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onAnotar"
+        android:text="ANOTAR"
+        app:layout_constraintBottom_toBottomOf="@+id/btComenzar"
+        app:layout_constraintEnd_toStartOf="@+id/btParar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btComenzar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
